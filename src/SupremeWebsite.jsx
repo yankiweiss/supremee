@@ -94,17 +94,34 @@ export default function SupremeWebsite() {
             icon={<IconCheck />}
           />
 
-          <ServiceCard
+
+  <div className="relative w-90">
+  {/* 🔸 Slanted Ribbon */}
+  <div className="absolute top-3 -right-10 rotate-45 bg-yellow-500 text-white text-xs font-bold px-10 py-1 shadow-md">
+    Coming Soon
+  </div>
+
+  <ServiceCard
             title="Asbestos Surveys"
             desc="Thorough asbestos inspections for renovation or demolition projects with clear lab-backed reports."
             icon={<IconLab />}
           />
+          </div>
+  
+
+ <div className="relative w-90">
+  {/* 🔸 Slanted Ribbon */}
+  <div className="absolute top-3 -right-10 rotate-45 bg-yellow-500 text-white text-xs font-bold px-10 py-1 shadow-md">
+    Coming Soon
+  </div>
+          
 
           <ServiceCard
             title="Mold & Air Quality"
             desc="Indoor air quality testing and mold inspections to protect occupant health and support repairs."
             icon={<IconAir />}
           />
+          </div>
 
           <ServiceCard
             title="Compliance Consulting"
