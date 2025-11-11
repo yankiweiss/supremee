@@ -1,6 +1,10 @@
 import React from "react";
 import logo from '../src/Screenshot 2025-11-04 152432.png';
 import leadTesting from '../src/leadtesting.png';
+import { useState } from "react";
+
+
+
 
 
 
@@ -23,6 +27,43 @@ export default function SupremeWebsite() {
     website: "www.supremeenvironmentalny.com",
     city: "Monroe, NY",
   };
+
+  const [name, setName] = useState('');
+  const [contactInfo, setContactInfo] = useState('');
+  const [message, setMessage] = useState('');
+  
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+
+
+     const name = document.getElementById('name').value;
+  const contactInfo = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  try {
+    const res = await fetch('https://supreme-email.vercel.app/email', {
+      method : 'POST',
+      headers : {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+       name,
+       contactInfo,
+       message
+
+      })
+    });
+
+    const data = await res.json();
+    console.log(data);
+    alert(`${name} Email was sent successfully!`)
+  }
+  catch (err){
+    console.error(err);
+    alert('failed to send email')
+  };
+
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
@@ -179,25 +220,40 @@ export default function SupremeWebsite() {
             </div>
           </div>
 
+        
+
           <div>
-            <form className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4" onSubmit={(e)=>{e.preventDefault(); alert('Thanks — we\'ll get back to you!');}}>
+
+            
+            
+            <form   className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4" onSubmit={sendEmail}>
               <div>
                 <label className="text-sm text-slate-600 block">Your name</label>
-                <input className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Full name" />
+                <input id="name" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Full name"
+                value={name}
+          onChange={e => setName(e.target.value)} />
               </div>
 
               <div>
                 <label className="text-sm text-slate-600 block">Email or phone</label>
-                <input className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Email or phone" />
+                <input id="phone" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Email or phone"
+                 value={contactInfo}
+          onChange={e => setContactInfo(e.target.value)} />
               </div>
 
               <div>
                 <label className="text-sm text-slate-600 block">Message</label>
-                <textarea className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" rows={4} placeholder="Describe the unit, address, or requirement" />
+                <textarea id="message" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" rows={4} placeholder="Describe the unit, address, or requirement" 
+                value={message}
+          onChange={e => setMessage(e.target.value)}/>
               </div>
+
+            
 
               <div className="text-right">
                 <button type="submit" className="px-5 py-2 bg-emerald-700 text-white rounded-md">Send message</button>
+
+               
               </div>
             </form>
           </div>
