@@ -1,12 +1,16 @@
 import React from "react";
-import logo from '../src/Screenshot 2025-11-04 152432.png'
+import logo from '../src/Screenshot 2025-11-04 152432.png';
+
+
+
+
 
 // Supreme Environmental - Single-file React component
 // Uses Tailwind CSS utility classes. Designed as a clean, responsive one-page site
 // that can be dropped into a React app (with Tailwind configured).
 // Replace LOGO_SRC with your logo path and update contact info where indicated.
 
-const LOGO_SRC = "/logo.png"; // replace with /path/to/your/logo.png
+ // replace with /path/to/your/logo.png
 
 export default function SupremeWebsite() {
   const contact = {
@@ -65,7 +69,7 @@ export default function SupremeWebsite() {
         <div className="order-first md:order-last flex items-center justify-center">
           <div className="w-full rounded-2xl overflow-hidden shadow-lg bg-white border border-slate-100">
             {/* placeholder for hero image */}
-            <img src="/hero-lead-testing.jpg" alt="Lead testing" className="w-full object-cover h-64 md:h-96" />
+            <img src="" alt="Lead testing" className="w-full object-cover h-64 md:h-96" />
           </div>
         </div>
       </section>
