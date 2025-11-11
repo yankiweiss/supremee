@@ -36,8 +36,6 @@ export default function SupremeWebsite() {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-
-
      const name = document.getElementById('name').value;
   const contactInfo = document.getElementById('phone').value;
   const message = document.getElementById('message').value;
@@ -57,6 +55,10 @@ export default function SupremeWebsite() {
     const data = await res.json();
     console.log(data);
     alert(`${name} Email was sent successfully!`)
+
+     setName('');
+    setContactInfo('');
+    setMessage('');
   }
   catch (err){
     console.error(err);
