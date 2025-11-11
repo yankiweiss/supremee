@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../src/Screenshot 2025-11-04 152432.png';
+import leadTesting from '../src/leadtesting.png';
 
 
 
@@ -69,7 +70,7 @@ export default function SupremeWebsite() {
         <div className="order-first md:order-last flex items-center justify-center">
           <div className="w-full rounded-2xl overflow-hidden shadow-lg bg-white border border-slate-100">
             {/* placeholder for hero image */}
-            <img src="" alt="Lead testing" className="w-full object-cover h-64 md:h-96" />
+            <img src={leadTesting} alt="Lead testing" className="w-full object-cover h-64 md:h-96" />
           </div>
         </div>
       </section>
