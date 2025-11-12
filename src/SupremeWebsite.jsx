@@ -231,21 +231,21 @@ export default function SupremeWebsite() {
             <form   className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm space-y-4" onSubmit={sendEmail}>
               <div>
                 <label className="text-sm text-slate-600 block">Your name</label>
-                <input id="name" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Full name"
+                <input required id="name" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Full name"
                 value={name}
           onChange={e => setName(e.target.value)} />
               </div>
 
               <div>
                 <label className="text-sm text-slate-600 block">Email or phone</label>
-                <input id="phone" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Email or phone"
+                <input required  id="phone" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" placeholder="Email or phone"
                  value={contactInfo}
           onChange={e => setContactInfo(e.target.value)} />
               </div>
 
               <div>
                 <label className="text-sm text-slate-600 block">Message</label>
-                <textarea id="message" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" rows={4} placeholder="Describe the unit, address, or requirement" 
+                <textarea required id="message" className="mt-1 w-full rounded-md border border-slate-200 px-3 py-2" rows={4} placeholder="Describe the unit, address, or requirement" 
                 value={message}
           onChange={e => setMessage(e.target.value)}/>
               </div>
